@@ -1,4 +1,16 @@
 import { Measure } from '../convert.js';
+import ventilationRate, {
+  VentilationRateSystems, 
+  VentilationRateUnits
+} from './ventilationRate.js'
+import energyConsumptionPerArea, {
+  EnergyConsumptionPerAreaSystems,
+  EnergyConsumptionPerAreaUnits
+} from './energyConsumptionPerArea.js'
+import heatingCoolingDegreeDays, {
+  HeatingCoolingDegreeDaysSystems,
+  HeatingCoolingDegreeDaysUnits
+} from './heatingCoolingDegreeDays.js'
 import acceleration, {
   AccelerationSystems,
   AccelerationUnits,
@@ -59,6 +71,9 @@ export type AllMeasuresSystems =
   | ApparentPowerSystems
   | AreaSystems
   | ChargeSystems
+  | VentilationRateSystems
+  | EnergyConsumptionPerAreaSystems
+  | HeatingCoolingDegreeDaysSystems
   | CurrentSystems
   | DigitalSystems
   | EachSystems
@@ -90,6 +105,9 @@ export type AllMeasuresUnits =
   | ApparentPowerUnits
   | AreaUnits
   | ChargeUnits
+  | VentilationRateUnits
+  | EnergyConsumptionPerAreaUnits
+  | HeatingCoolingDegreeDaysUnits
   | CurrentUnits
   | DigitalUnits
   | EachUnits
@@ -121,6 +139,9 @@ export type AllMeasures =
   | 'apparentPower'
   | 'area'
   | 'charge'
+  | 'ventilationRate'
+  | 'energyConsumptionPerArea'
+  | 'heatingCoolingDegreeDays'
   | 'current'
   | 'digital'
   | 'each'
@@ -155,6 +176,9 @@ const allMeasures: Record<
   apparentPower,
   area,
   charge,
+  ventilationRate,
+  energyConsumptionPerArea,
+  heatingCoolingDegreeDays,
   current,
   digital,
   each,
